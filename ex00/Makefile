@@ -1,4 +1,4 @@
-NAME = 
+NAME = easyfind
 
 SRC = main.cpp
 
