@@ -56,12 +56,12 @@ void printShortestSpan(Span& s)
 int main(void)
 {
 	srand(time(0));
-	int nums = 10000;
+	int nums = 100;
 	std::vector<int> v;
 	Span s(nums);
 	for (int i = 0; i < nums; i++)
 	{
-		int num = rand() % 100;
+		int num = rand() % 10000;
 		std::cout << "num: " << num << std::endl;
 		v.push_back(num);
 	}
