@@ -2,27 +2,36 @@
 #ifndef MUTANTSTACK_H
 # define MUTANTSTACK_H
 
-# include <vector>
+# include <stack>
+# include <deque>
 # include <iostream>
 
-template <typename T> class MutantStack
+template <typename T> class MutantStack: public std::stack<T>
 {
 	
 private:
-	std::vector<T> _v;
 
 public:
-	MutantStack();
-	MutantStack(const MutantStack& m);
-	~MutantStack();
 
-	MutantStack& operator=(const MutantStack& m);
+	typedef typename std::deque<T>::iterator iterator;
+	typedef typename std::deque<T>::const_iterator const_iterator;
 
-	void push(T val);
-	void pop();
-
+	iterator begin() 
+	{
+		return (this->c.begin());
+	};
+	iterator end() 
+	{
+		return (this->c.end());
+	};
+	const_iterator begin() const
+	{
+		return (this->c.begin());
+	};
+	const_iterator end() const
+	{
+		return (this->c.end());
+	};	
 };
-
-# include "MutantStack.tpp"
 
 #endif
