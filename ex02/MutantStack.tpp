@@ -17,3 +17,14 @@ template <typename T> MutantStack<T>::~MutantStack()
 {
 	std::cout << "MutantStack destructor called" << std::endl;
 }
+
+template <typename T> void MutantStack<T>::push(T val)
+{
+	this->_v.push_back(val);
+}
+
+template <typename T> void MutantStack<T>::pop()
+{
+	if (this->_v.size() > 0)
+		this->_v.pop_back();
+}

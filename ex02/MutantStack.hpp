@@ -13,11 +13,13 @@ private:
 
 public:
 	MutantStack();
-	MutantStack(T val);
 	MutantStack(const MutantStack& m);
 	~MutantStack();
 
+	MutantStack& operator=(const MutantStack& m);
 
+	void push(T val);
+	void pop();
 
 };
 
