@@ -3,12 +3,28 @@
 
 Span::Span(unsigned int n)
 {
+	std::cout << "Span default constructor called" << std::endl;
 	this->_n = n;
+}
+
+Span::Span(const Span& s)
+{
+	std::cout << "Span copy constructor called" << std::endl;
+	this->_n = s._n;
 }
 
 Span::~Span()
 {
+	std::cout << "Span destructor called" << std::endl;
+}
 
+Span& Span::operator=(const Span& s)
+{
+	if (this != &s)
+	{
+		this->_n = s._n;
+	}
+	return (*this);
 }
 
 void Span::addNumber(int n)
@@ -44,4 +60,20 @@ int Span::longestSpan()
 	if (this->_v.size() < 2)
 		throw (std::exception());
 	return (*std::max_element(this->_v.begin(), this->_v.end()) - *std::min_element(this->_v.begin(), this->_v.end()));
+}
+
+void Span::addMultipleNumbers(int times)
+{
+	srand(time(0));
+	for (int i = 0; i < times; i++)
+	{
+		try
+		{
+			addNumber(rand());
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
 }
