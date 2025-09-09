@@ -2,13 +2,25 @@
 #ifndef SPAN_H
 # define SPAN_H
 
+# include <vector>
+# include <iostream>
+# include <algorithm>
+
+
 class Span
 {
+
 private:
-	/* data */
+	unsigned int 	 _n;
+	std::vector<int> _v;
+
 public:
-	Span(/* args */);
+	Span(unsigned int n);
 	~Span();
+
+	void addNumber(int n);
+	int shortestSpan();
+	int longestSpan();
 };
 
 
