@@ -56,13 +56,14 @@ void printShortestSpan(Span& s)
 int main(void)
 {
 	srand(time(0));
+	int nums = 10000;
 	std::vector<int> v;
-	Span s(1000);
-	for (int i = 0; i < 100; i++)
+	Span s(nums);
+	for (int i = 0; i < nums; i++)
 	{
-		int num = rand();
-		std::cout << "num % 100: " << num % 100 << std::endl;
-		v.push_back(num % 100);
+		int num = rand() % 100;
+		std::cout << "num: " << num << std::endl;
+		v.push_back(num);
 	}
 	tryToAddMultiple(s, v);
 	printShortestSpan(s);

@@ -41,7 +41,7 @@ int	min_len(std::vector<int> v)
 	{
 		for (int j = i + 1; (unsigned int)j < v.size(); j++)
 		{
-			if (abs(v[i] - v[j]) < minlen)
+			if (abs(v[i] - v[j]) < minlen && abs(v[i] - v[j]) != 0)
 				minlen = abs(v[i] - v[j]);
 		}
 	}
