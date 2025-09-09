@@ -1,4 +1,4 @@
-NAME = 
+NAME = span
 
 SRC = main.cpp
 
