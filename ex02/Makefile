@@ -1,4 +1,4 @@
-NAME = 
+NAME = abomination
 
 SRC = main.cpp
 
