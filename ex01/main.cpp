@@ -68,6 +68,5 @@ int main(void)
 	tryToAddMultiple(s, v);
 	printShortestSpan(s);
 	printLongestSpan(s);
-	
 	return (0);
 }
