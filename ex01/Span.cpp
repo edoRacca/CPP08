@@ -51,29 +51,13 @@ int	min_len(std::vector<int> v)
 int Span::shortestSpan()
 {
 	if (this->_v.size() < 2)
-		throw (std::exception());
+		throw (std::runtime_error("Too few values for shortest span"));
 	return (min_len(this->_v));
 }
 
 int Span::longestSpan()
 {
 	if (this->_v.size() < 2)
-		throw (std::exception());
+		throw (std::runtime_error("Too few values for longest span"));
 	return (*std::max_element(this->_v.begin(), this->_v.end()) - *std::min_element(this->_v.begin(), this->_v.end()));
-}
-
-void Span::addMultipleNumbers(int times)
-{
-	srand(time(0));
-	for (int i = 0; i < times; i++)
-	{
-		try
-		{
-			addNumber(rand());
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-	}
 }

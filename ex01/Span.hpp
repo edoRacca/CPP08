@@ -5,7 +5,7 @@
 # include <vector>
 # include <iostream>
 # include <algorithm>
-# include <random>
+# include <cstdlib>
 
 class Span
 {
@@ -25,7 +25,11 @@ public:
 	int shortestSpan();
 	int longestSpan();
 
-	void addMultipleNumbers(int times);
+		template <typename T> void addMultipleNumbers(T t)
+		{
+			for (typename T::iterator iter = t.begin(); iter != t.end(); iter++)
+				addNumber(*iter);
+		};
 };
 
 
